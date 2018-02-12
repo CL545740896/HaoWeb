@@ -1,0 +1,168 @@
+{% extends "header.html" %}
+{% block body %}
+    {% load staticfiles %}
+<div class="text-center" style="position:relative;">
+        <img src="{% static 'src/image/login.jpg' %}" style="width: 100%">
+    <div style="margin-top: 150px; position:absolute; left: 3px; top:8%;" >
+           <div class="modal-body" >
+                <form id="updateform">
+                 {% csrf_token %}
+                    {{ form }}
+                     <div class="form-group" >
+                         <div class="input-group " >
+                           <span class="input-group-addon" id="basic-addon1" style="background:  #f7c223;color: white;">帐号</span>
+                              <input type="number" class="form-control" id="phone" name="username"  placeholder="请输入手机号码"  aria-describedby="basic-addon1" required>
+                         </div>
+                    </div>
+                    <div class="form-group">
+                          <div class="input-group " >
+                         <span class="input-group-addon" id="basic-addon1" style="background:  #f7c223;color: white;">密 码</span>
+                         <input  type="password" class="form-control" id="password" name="password" placeholder="请输入密码" aria-describedby="basic-addon1" required>
+                               </div>
+                    </div>
+
+                     <div class="form-group">
+                          <div class="input-group " >
+                              <span class="input-group-addon" id="basic-addon1"   style="background: #f7c223;color: white;">验证码</span>
+                         <input  type="text" class="form-control" id="yzm" name="yzm" placeholder="输入验证码" aria-describedby="basic-addon1" required>
+                               <span class="input-group-addon" id="basic-addon1"  onclick="settime(this)"   style="width: 20%;background: #f7c223;color: white;">获取验证码</span>
+                               </div>
+                    </div>
+
+                    <div class="text-center">
+                        <span id="returnMessage" class="glyphicon"> </span>
+                        <button id="submitBtn"  disabled="disabled" type="button" class="btn btn-primary" style="width: 100%">注 册</button>
+                    </div>
+                </form>
+            </div>
+    </div>
+    </div>
+
+</div>
+    <script type="text/javascript">
+        var countdown=60;
+        var flag=true;
+        function settime(obj)
+        {
+        if (countdown == 0)
+        {
+             obj.innerHTML="获取验证码"
+             obj.setAttribute("onclick", "settime(this)");
+            countdown = 60;
+            flag=true;
+            return;
+        }
+        else {
+            if(flag)
+            {
+               var phone=$("#phone").val();
+                 $.ajax({
+                        type:"GET" ,
+                        url:"/sendMsg",
+                        data:"phone=" + phone,
+                        cache: false,
+                        success: function(data){
+                      if (data)
+                       {
+                         alert(data);
+                       }
+                       else
+                       {
+                           alert('Sorry,检查网络后再次发送~')
+                       }
+                        }
+                       })
+                $("#submitBtn").attr('disabled',false);
+            }
+            flag=false;
+            obj.setAttribute("onclick", "");
+            obj.innerHTML="重新发送(" + countdown + ")";
+            countdown--;
+        }  setTimeout(function() {  settime(obj) } ,1000)
+        }
+    </script>
+   <script type='text/javascript'>
+   document.title='账户注册'
+    var form = $('#updateform');
+    $(document).ready(function () {
+        form .bootstrapValidator({
+            message: '输入值不合法',
+            feedbackIcons: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },
+            fields: {
+                password: {
+                    message: '密码不合法',
+                    validators: {
+                        notEmpty: {
+                            message: '密码不能为空'
+                        },
+                        stringLength: {
+                            min: 6,
+                            max: 10,
+                            message: '请输入6到10个字符'
+                        }
+                    }
+                }
+                , username: {
+                    validators: {
+                        notEmpty: {
+                            message: '手机号不能为空'
+                        },
+                        regexp: {
+                            regexp: "^([0-9]{11})?$",
+                            message: '手机号码格式错误'
+                        }
+                    }
+                }
+                 , yzm: {
+                    validators: {
+                        notEmpty: {
+                            message: '验证码不能为空!'
+                        }
+                    }
+                }
+            }
+        });
+    });
+    $("#submitBtn").click(function () {
+        //进行表单验证
+        var bv = form.data('bootstrapValidator');
+        bv.validate();
+        if (bv.isValid()) {
+            console.log(form.serialize());
+            //发送ajax请求
+            $.ajax({
+                url: '/register',
+                async: false,//同步，会阻塞操作
+                type: 'POST',//PUT DELETE POST
+                data: form.serialize(),
+                complete: function (msg) {
+                    console.log('完成了');
+                },
+                success: function (result) {
+                    if (result) {
+                        alert(result)
+                       if(result=='注册成功!')
+                       {
+                           location.href='/index'
+                       }
+                        else
+                       {
+                               window.location.reload()
+                       }
+                    } else {
+                        $("#returnMessage").hide().html('<label class="label label-danger">注册失败!</label>').show(300);
+                    }
+                }, error: function () {
+                    $("#returnMessage").hide().html('<label class="label label-danger">注册失败!</label>').show(300);
+                }
+            })
+        }
+    });
+
+</script>
+{% endblock %}
+

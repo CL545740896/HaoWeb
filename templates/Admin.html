@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load staticfiles %}
+<head>
+    <meta charset="UTF-8">
+    <title>好易贷后台管理</title>
+     <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+</head>
+<body>
+ <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <div class="text-center">
+  <h2 style="font-family: 微软雅黑">客户信息后台</h2>
+  <style>
+      .th_text
+      {
+          text-align: center;
+      }
+  </style>
+<table id="table_id" class="table table-bordered">
+            <thead>
+                <tr>
+                     <th class="th_text">Id:</th>
+                     <th class="th_text"> 姓名:</th>
+                    <th class="th_text">电话号码:</th>
+                     <th class="th_text"> 贷款金额:</th>
+                     <th class="th_text"> 放款额度:</th>
+                    <th class="th_text"> 工作单位:</th>
+                    <th class="th_text"> 工作年限:</th>
+                    <th class="th_text">  芝麻分:</th>
+                      <th class="th_text">工资类型:</th>
+                      <th class="th_text">工作类型 :</th>
+                     <th class="th_text">  社保时间:</th>
+                      <th class="th_text">  公积金时间:</th>
+                     <th class="th_text"> 家庭地址:</th>
+                      <th class="th_text">  房产类型:</th>
+                    <th class="th_text">  注册时间:</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for user in Users %}
+                <tr>
+                <td>{{ user.id }}</td>
+                    <td>{{ user.name }}</td>
+                    <td>{{ user.phone }}</td>
+                     <td style="color: red">{{ user.money }}</td>
+                     <td style="color: #0c82df">{{ user.result }}</td>
+                     <td style="color: #0c82df">{{ user.job_address }}</td>
+                     <td style="color: #0c82df">{{ user.job_age }}</td>
+                    <td>{{ user.zhimafen }}</td>
+                    <td>{{ user.salary }}</td>
+                     <td>{{ user.job_type }}</td>
+                     <td>{{ user.shebaotime }}</td>
+                    <td>{{ user.gongjijintime }}</td>
+                     <td>{{ user.home_address }}</td>
+                    <td style="color: orangered">{{ user.house }}</td>
+                <td style="color: orangered">{{ user.create_time }}</td>
+                </tr>
+             {% endfor %}
+            </tbody>
+        </table>
+  <div class="pagination">
+    <span class="step-links">
+        {% if Users.has_previous %}
+            <a class="btn btn-danger " role="button"   href="?page={{ Users.previous_page_number }}">上一页</a>
+        {% endif %}
+            <span class="current" style="font-size: 20px">
+             {{ Users.number }} /{{ Users.paginator.num_pages }}
+         </span>
+        {% if Users.has_next %}
+            <a  class="btn btn-danger " role="button" href="?page={{ Users.next_page_number }}">下一页</a>
+        {% endif %}
+    </span>
+</div>
+</div>
+<script>
+    var looper=1000*30;
+
+//是否首次执行
+    function Refresh(){
+     setInterval(function(){
+           location.reload()
+        },looper);
+    }
+    Refresh();
+</script>
+</body>
+</html>

@@ -1,0 +1,344 @@
+{% extends "header.html" %}
+{% block body %}
+    {% load staticfiles %}
+    <style>
+        .carousel slide
+        {
+            height: 500px;
+            background: #000;
+        }
+        .carousel-inner.item
+        {
+            height: 500px;
+        }
+       .lo-little{
+                font-size: 23px;
+                color: #ff9333;
+                margin-bottom: 8px;
+               margin-left: 15px;
+        }
+       .lo-little .num{
+                display: inline-block;
+    vertical-align: text-top;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    color: #fff;
+    background: #ff9333;
+    text-align: center;
+    line-height: 32px;
+    margin-right: 10px;
+    margin-bottom: 8px;
+        }
+
+    </style>
+   <div style="margin-top: 53px;">
+       <img src="{% static 'src/image/bg_loan1.jpg' %}" style="width: 100%;height: 160px" >
+   </div>
+   <div class="container"  style="margin-top: 49px; margin-left: 0px">
+      <div  class="container" >
+          <div class="lo-little">
+              <span class="num" >2</span>
+             填写个人情况
+          </div>
+  <div class="modal-body">
+      <form  id="uploadform">
+           {% csrf_token %}
+            {{ form }}
+           <div class="form-group" >
+                 <div class="input-group " style="width: 100%">
+                       <span class="input-group-addon" id="basic-addon1" style="background: #f7c223;color: white;">工作类型</span>
+                      <select class="selectpicker" style="width: 100%; height: 34px" id="job"  name="job_type" onchange="checkjob()">
+                              <option value="失业" selected>失业</option>
+                              <option value="在职">在职</option>
+                            </select>
+                </div>
+          </div>
+
+
+
+     <div id="job_detail" style="display: none">
+           <div class="form-group" >
+                     <div class="input-group ">
+                          <span class="input-group-addon" id="basic-addon1" style="background: #f7c223;color: white;">工作单位</span>
+                          <input  id="job_address"  name="job_address" type="text" class="form-control"  style="width: 100%" placeholder="请填写工作单位" aria-describedby="basic-addon1">
+                    </div>
+           </div>
+
+          <div class="form-group" >
+                   <div class="input-group ">
+                      <span class="input-group-addon" id="basic-addon1" style="background: #f7c223;color: white;">工作年限</span>
+                            <input  id="job_age" name="job_age"  type="number" class="form-control" style="width: 100%" placeholder="请填写工作年限" aria-describedby="basic-addon1" required>
+{#                       <span class="input-group-addon" id="basic-addon1" style="background: #f7c223;color: white;width: 30%">/ 年</span>#}
+                   </div>
+          </div>
+         </div>
+
+          <div class="form-group" >
+                 <div class="input-group " style="width: 100%">
+                   <span class="input-group-addon" id="basic-addon1" style="background: #f7c223;color: white;">是否代发工资</span>
+                          <select  name="salary_type"  class="selectpicker" style="width: 100%; height: 34px">
+                                  <option value="代发">代发</option>
+                                  <option value="现金" selected>现金</option>
+                          </select>
+                </div>
+          </div>
+
+
+           <div class="form-group" >
+                  <div class="input-group " style="width: 100%">
+                   <span class="input-group-addon" id="basic-addon1" style="width: 109px;background: #f7c223;color: white;">是否有社保</span>
+                  <select class="selectpicker"  name="shebao_type"  style="width: 100%; height: 34px" onchange="checkshebao()" id="shebao">
+                        <option value="有社保">有社保</option>
+                        <option value="没社保" selected>没社保</option>
+                  </select>
+                </div>
+           </div>
+
+          <div class="form-group" >
+                    <div style="display: none" id="shebao_time">
+                   <div class="input-group " >
+                       <span class="input-group-addon" id="basic-addon1" style="background: #f7c223;color: white;">社保缴纳</span>
+                          <input type="number" name="time_shebao" class="form-control" placeholder="请填写缴纳的月数" aria-describedby="basic-addon1" required>
+                </div>
+          </div>
+
+          </div>
+
+     <div class="form-group" >
+          <div class="input-group " style="width: 100%">
+<br>
+           <span class="input-group-addon" id="basic-addon1" style="background: #f7c223;color: white;">是否有公积金</span>
+                  <select  name="gongjijing_type" class="selectpicker" style="width: 100%; height: 34px" onchange="checkgongjijin()" id="gongjijin">
+                         <option value="有公积金">有公积金</option>
+                          <option value="没有公积金"  selected>没有公积金</option>
+                  </select>
+        </div>
+     </div>
+
+        <div class="form-group" >
+          <div style="display: none" id="gongjijin_time">
+               <div class="input-group " >
+                  <span class="input-group-addon" id="basic-addon1" style="background: #f7c223;color: white;">公积金缴纳</span>
+                        <input type="number" class="form-control" name="time_gongjijin"  style="width: 100%" placeholder="请填写缴纳的月数" aria-describedby="basic-addon1" required>
+               </div>
+          </div>
+        </div>
+
+          <div class="form-group" >
+                <div class="input-group ">
+                  <span class="input-group-addon" id="basic-addon1" style="background: #f7c223;color: white;">居住地址</span>
+                  <input id="home_address" name="home_address"  type="text" class="form-control"  style="width: 100%" placeholder="省-市-区(镇)-街道" aria-describedby="basic-addon1"/>
+                </div>
+          </div>
+
+
+          <div class="form-group" >
+                 <div class="input-group " style="width: 100%">
+                       <span class="input-group-addon" id="basic-addon1" style="background: #f7c223;color: white;">房子类型</span>
+                      <select  name="house_type"  class="selectpicker" style="width: 100%; height: 34px">
+                              <option value="按揭">按揭</option>
+                              <option value="全款">全款</option>
+                              <option value="租用">租用</option>
+                            </select>
+                </div>
+          </div>
+
+         <div class="form-group" >
+                   <div class="input-group "  id="zhimafen">
+                      <span class="input-group-addon" id="basic-addon1" style="background: #f7c223;color: white;">芝麻分</span>
+                            <input  id="zhimafen" name="zhimafen"  type="number" class="form-control" placeholder="请填写支付宝芝麻分值" aria-describedby="basic-addon1" required>
+                    </div>
+         </div>
+
+          <div class="text-center" id="result"  >
+                <span id="returnMessage" class="glyphicon"> </span>
+                <button id="submitBtn" type="button" class="btn btn-primary" style="width: 50%">提 交 申 请</button>
+               <span id="loading" hidden><img style="width: 55px;height: 55px;" src="{% static 'src/image/loading.gif' %}" >
+               <span id="count" style="color: red;font-family: 微软雅黑;font-size: 15px;"></span>
+               </span>
+
+            </div>
+      </form>
+      </div>
+</div>
+   </div>
+ <div class="footer">
+    <p class="text-muted text-center">好易贷 - 珠海小额贷款平台 <br>版权所有©2017珠海市好易贷金融服务有限公司 </p>
+</div>
+
+<script type="text/javascript">
+   function checkgongjijin()
+   {
+    var tag=$("#gongjijin option:selected").val();
+       if(tag=='有公积金')
+       {
+           $("#gongjijin_time").show();
+       }
+       else
+       {
+            $("#gongjijin_time").hide();
+       }
+   }
+   function checkjob()
+   {
+    var tag=$("#job option:selected").val();
+       if(tag=='在职')
+       {
+           $("#job_detail").show();
+       }
+       else
+       {
+            $("#job_detail").hide();
+       }
+   }
+
+   function checkshebao()
+   {
+    var tag=$("#shebao option:selected").val();
+       if(tag=='有社保')
+       {
+           $("#shebao_time").show();
+       }
+       else
+       {
+            $("#shebao_time").hide();
+       }
+   }
+</script>
+<script type='text/javascript'>
+         var count=30;
+        function upLoad()
+        {
+             $("#count").text('信息审核中....'+'请等待'+count--+'S');
+             if(count==-1)
+             {
+                 alert('恭喜你初步审核成功!');
+                 location.href="/result";
+             }
+             setTimeout(function() {   upLoad() } ,1000);
+        }
+    var form = $('#uploadform');
+    var result_div= document.getElementById("result");
+    $(document).ready(function () {
+        form .bootstrapValidator({
+            message: '输入值不合法',
+            feedbackIcons: {
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },
+            fields: {
+                   job_address: {
+                    message: '输入不合法',
+                    validators: {
+                        notEmpty: {
+                            message: '请输入工作单位'
+                        }
+                    }
+                },
+               job_age: {
+                    message: '输入不合法',
+                    validators: {
+                        notEmpty: {
+                            message: '请输入工作年限'
+                        }
+                    }
+                },  home_address: {
+                    validators: {
+                        notEmpty: {
+                            message: '居住地址不能为空'
+                        }
+                    }
+                }, job_type: {
+                    validators: {
+                        notEmpty: {
+                            message: '选择一个'
+                        }
+                    }
+                }, house_type: {
+                    validators: {
+                        notEmpty: {
+                            message: '选择一个'
+                        }
+                    }
+                }, gongjijing_type: {
+                    validators: {
+                        notEmpty: {
+                            message: '选择一个'
+                        }
+                    }
+                },
+                shebao_type: {
+                    validators: {
+                        notEmpty: {
+                            message: '选择一个'
+                        }
+                    }
+                },
+                salary_type: {
+                    validators: {
+                        notEmpty: {
+                            message: '选择一个'
+                        }
+                    }
+                },
+                 time_shebao: {
+                    validators: {
+                        notEmpty: {
+                            message: '缴纳月数不能为空'
+                        }
+                    }
+                },
+                 time_gongjijin: {
+                    validators: {
+                        notEmpty: {
+                            message: '缴纳月数不能为空'
+                        }
+                    }
+                },
+
+                zhimafen: {
+                    validators: {
+                        notEmpty: {
+                            message: '无芝麻分请输入数字0'
+                        }
+                    }
+                }
+            }
+        });
+    });
+    $("#submitBtn").click(function () {
+        //进行表单验证
+        var bv = form.data('bootstrapValidator');
+        bv.validate();
+        if (bv.isValid()) {
+            console.log(form.serialize());
+            //发送ajax请求
+            $.ajax({
+                url: '/message',
+                async: false,//同步，会阻塞操作
+                type: 'POST',//PUT DELETE POST
+                data: form.serialize(),
+                complete: function (msg) {
+                    console.log('完成了');
+                },
+                success: function (result) {
+                    if (result=='恭喜你初步审核成功!') {
+{#                        result_div.style.marginLeft="5%";#}
+                           $("#loading").show();
+                           $("#submitBtn").hide();
+                                upLoad();
+
+                    } else {
+                          alert('请返回第一步完善个人信息');
+                          location.href="/index"
+                    }
+                }, error: function (result) {
+                     alert('申请失败!');
+                }
+            })
+        }
+    });
+</script>
+
+{% endblock %}

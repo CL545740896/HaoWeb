@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片上传</title>
+</head>
+
+<body>
+
+<form enctype="multipart/form-data" action="/upload_file" method="post">
+    {% csrf_token %}
+    {{ form }}
+   <input type="file" name="myfile" />
+    <br>
+    <input type="submit" value="上传图片" >
+
+</form>
+<script>
+
+function changeSrc()
+{
+    document.getElementById("two").src="{% static 'src/image/re.jpg' %}";
+     document.getElementById("one").src="{% static 'src/image/1.jpg' %}";
+}
+</script>
+<img style="width: 300px;height: 300px;"   id="one">
+<img style="width: 300px;height: 300px;"   id="two">
+<br>
+ <input type="submit" value="图片显示" onclick="changeSrc()">
+<form   action="/result" method="get">
+     <input type="submit" value="人脸对比"  />
+</form>
+
+</body>
+</html>

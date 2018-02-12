@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>路灯控制中心</title>
+</head>
+<body>
+
+<div  align="center">
+    <h2>ZigBee路灯控制系统</h2>
+    <h2>实时时间:2018/1/16  18:53</h2>
+      <h2>路灯时间:等待连接</h2>
+    <table>
+        <thead>
+        <tr> <button>一键同步</button></tr>
+        <tr> <button>设置路灯</button></tr>
+        <tr> <button>进入光强控制</button></tr>
+          <tr> <button>连接设备</button></tr>
+          <tr> <button>退出程序</button></tr>
+        </thead>
+        <tbody>
+        <td>
+              路灯编号<br>
+      <select >
+    <option>75620</option>
+    <option>8803</option>
+    <option>8802</option>
+        </select>
+        </td>
+         <td>
+              串口端口<br>
+      <select >
+    <option>8806</option>
+    <option>8803</option>
+    <option>8802</option>
+        </select>
+        </td>
+   <td>
+        亮度选择<br>
+    <select >
+    <option>高亮</option>
+    <option>8803</option>
+    <option>8802</option>
+        </select>
+        </td>
+        </tbody>
+    </table>
+<br>
+
+     <table>
+         <tr> <button>进入时间控制</button></tr>
+      <br>
+         <td>开灯时间
+          <select >
+    <option>12</option>
+        </select>
+             时
+          <select >
+    <option>30</option>
+        </select>
+             分
+              <button>设置</button>
+         </td>
+         <br>
+          <td >关灯时间
+          <select >
+    <option>12</option>
+        </select>
+             时
+          <select >
+    <option>30</option>
+        </select>
+             分
+              <button>设置</button>
+         </td>
+    </table>
+    <br>
+    <table border="2">
+        <thead>
+        <th>路灯编号</th>
+         <th>网络状态</th>
+         <th>当前亮度</th>
+         <th>工作模式</th>
+        <th>环境光强(Lx)</th>
+         <th>开关时间</th>
+        </thead>
+        <tbody>
+        <tr>
+            <td>路灯1</td>
+         <td>未连接</td>
+        </tr>
+        <tr>
+            <td>路灯2</td>
+         <td>未连接</td>
+        </tr>
+        </tbody>
+    </table>
+    <br>
+        <table>
+        <thead>
+        <th>实时数据<input type="text" value="Clean"></th>
+        <th>命令<input type="text" value="Clean"></th>
+        </thead>
+        <tbody>
+        <td>
+            <textarea  style="width: 300px ;height: 200px">
+
+            </textarea>
+        </td>
+        <td>
+            <textarea style="width: 300px;height: 200px">
+
+            </textarea>
+        </td>
+        </tbody>
+
+    </table>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+      <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+     <link rel="stylesheet" type="text/css" href="{% static 'danmu/static/css/bootstrap.min.css' %}" media="screen" />
+   <link rel="stylesheet" type="text/css" href="{% static 'danmu/static/css/style.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'danmu/dist/css/barrager.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'danmu/static/pick-a-color/css/pick-a-color-1.2.3.min.css' %}">
+    <link type="text/css" rel="stylesheet" href="{% static 'danmu/static/syntaxhighlighter/styles/shCoreDefault.css' %}"/>
+    <title>100天纪念日</title>
+</head>
+<body style="background: url({% static 'src/image/love.jpg' %})">
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+{#    <script type="text/javascript" src="{% static 'danmu/static/js/jquery-1.9.1.min.js' %}"></script>#}
+{#    <script type="text/javascript" src="{% static 'danmu/static/js/bootstrap.min.js' %}"></script>#}
+    <script type="text/javascript" src="{% static 'danmu/static/js/tinycolor-0.9.15.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'danmu/dist/js/jquery.barrager.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'danmu/static/syntaxhighlighter/scripts/shCore.js' %}"></script>
+    <script type="text/javascript" src="{% static 'danmu/static/syntaxhighlighter/scripts/shBrushJScript.js' %}"></script>
+    <script type="text/javascript" src="{% static 'danmu/static/syntaxhighlighter/scripts/shBrushPhp.js' %}"></script>
+    <script type="text/javascript" src="{% static 'danmu/static/pick-a-color/js/pick-a-color-1.2.3.min.js' %}"></script>
+<style>
+   .input-danmu{width: 250px;
+                 margin-left: 3%;
+                 height: 33px;
+                 border-top-right-radius: 5px;
+                 border-top-left-radius: 5px;
+                 border-bottom-right-radius:5px;
+                 border-bottom-left-radius:5px;
+                 }
+
+
+</style>
+ <div  class="container"  style="margin-top: 50%;margin-bottom: 15px">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<div class="carousel slide" id="carousel-242306">
+				<ol class="carousel-indicators">
+					<li class="active" data-slide-to="0" data-target="#carousel-242306">
+					</li>
+					<li data-slide-to="1" data-target="#carousel-242306">
+					</li>
+					<li data-slide-to="2" data-target="#carousel-242306">
+					</li>
+                    <li data-slide-to="3" data-target="#carousel-242306">
+					</li>
+                    <li data-slide-to="4" data-target="#carousel-242306">
+					</li>
+                    <li data-slide-to="5" data-target="#carousel-242306">
+					</li>
+                    <li data-slide-to="6" data-target="#carousel-242306">
+					</li>
+                    <li data-slide-to="7" data-target="#carousel-242306">
+					</li>
+                    <li data-slide-to="8" data-target="#carousel-242306">
+					</li>
+                    <li data-slide-to="9" data-target="#carousel-242306">
+					</li>
+                    <li data-slide-to="10" data-target="#carousel-242306">
+					</li>
+                    <li data-slide-to="11" data-target="#carousel-242306">
+					</li>
+                    <li data-slide-to="12" data-target="#carousel-242306">
+					</li>
+
+				</ol>
+				<div class="carousel-inner">
+                    <div class="item active">
+						<img alt="" src="{% static 'src/image/love/1.jpg' %}" />
+
+					</div>
+					<div class="item">
+						<img alt="" src="{% static 'src/image/love/2.jpg' %}" />
+
+					</div>
+					<div class="item">
+						<img alt="" src="{% static 'src/image/love/3.jpg' %}" />
+					</div>
+					<div class="item">
+						<img alt="" src="{% static 'src/image/love/4.jpg' %}" />
+
+					</div>
+                    	<div class="item">
+						<img alt="" src="{% static 'src/image/love/5.jpg' %}" />
+
+					</div>
+                    	<div class="item">
+						<img alt="" src="{% static 'src/image/love/6.jpg' %}" />
+
+					</div>
+                    	<div class="item">
+						<img alt="" src="{% static 'src/image/love/7.jpg' %}"/>
+
+					</div>
+                    	<div class="item">
+						<img alt="" src="{% static 'src/image/love/8.jpg' %}" style="width: auto"/>
+
+					</div>
+                    	<div class="item">
+						<img alt="" src="{% static 'src/image/love/9.jpg' %}" />
+				</div>
+                    <div class="item">
+						<img alt="" src="{% static 'src/image/love/10.jpg' %}" />
+				</div>
+                    <div class="item">
+						<img alt="" src="{% static 'src/image/love/11.jpg' %}" />
+				</div>
+                    <div class="item">
+						<img alt="" src="{% static 'src/image/love/12.jpg' %}" />
+				</div>
+                    <div class="item">
+						<img alt="" src="{% static 'src/image/love/13.jpg' %}" />
+				</div>
+
+                <a class="left carousel-control" href="#carousel-242306" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" style="color: #ffffff"></span>
+            </a>
+                <a class="right carousel-control" href="#carousel-242306" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" style="color: #ffffff"></span>
+                </a>
+			</div>
+		</div>
+	</div>
+</div>
+ </div>
+<div align="center">
+
+    <input id="danmu_text"  class="input-danmu" placeholder="请输入 昵称:祝福语!" >  <button type="button" class="btn btn-primary" onclick="send()">发送祝福</button>
+   <hr style="background-color: #1B9A59;height: 1px;" >
+<button onclick="playVid()" type="button" class="btn btn-primary" style="height: 50px;width: 150px">播 放</button>
+<button onclick="pauseVid()" type="button" class="btn btn-danger" style="height: 50px;width: 150px">暂 停</button>
+<br />
+<br />
+<audio id="audio1">
+  <source src="{% static 'src/你是我的未来.mp3' %}" type="audio/mp3">
+  <source src="/example/html5/mov_bbb.ogg" type="video/ogg">
+</audio>
+</div>
+
+<script>
+    alert('服务器差,加载需要大概1分钟,不要那么快离开喔!进来记得发弹幕喔~~! 格式:昵称 :+祝福语!')
+    var myVideo=document.getElementById("audio1");
+
+function pauseVid()
+  {
+  myVideo.pause();
+  }
+
+ //每条弹幕发送间隔
+var looper_time=3*1000;
+    var looper_music=1000;
+
+//是否首次执行
+    function playVid(){
+     setInterval(function(){
+           myVideo.play();
+        },looper_music);
+    }
+    playVid();
+
+  var  run_once=true;
+do_barrager();
+
+function do_barrager(){
+  if(run_once){
+      //如果是首次执行,则设置一个定时器,并且把首次执行置为false
+      looper=setInterval(do_barrager,looper_time);
+      run_once=false;
+  }
+  //获取
+  $.getJSON('/danmu',function(data){
+      //是否有数据
+      if(data){
+          var danmu= JSON.parse(data);
+          $('body').barrager(danmu);
+      }
+  });
+}
+function  send()
+{
+    var text=document.getElementById('danmu_text').value;
+    $.ajax({
+    type:"GET" ,
+    url:"/danmu",
+    data:"text=" + text,
+    cache: false,
+    success: function(data){
+  if (data)
+   {
+    var danmu= JSON.parse(data);
+    $('body').barrager(danmu);
+    document.getElementById('danmu_text').value='';
+   }
+   else
+   {
+       alert('Sorry,检查网络后再次发送~')
+   }
+    }
+   })
+
+
+
+
+}
+
+
+
+</script>
+
+
+</body>
+</html>

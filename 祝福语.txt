@@ -1,0 +1,56 @@
+{"img":"/static/src/image/6.jpg","info":"哇塞,牛逼了!!","color":"#20B2AA"}
+{"img":"/static/src/image/2.jpg","info":"摇了摇头：祝福祝福!长长久久!","color":"#FF0000"}
+{"img":"/static/src/image/6.jpg","info":"Ｃonfident：希望未来的每一天都能与你在一起","color":"#EEEE00"}
+{"img":"/static/src/image/6.jpg","info":"Ｃonfident：跟你在一起的100天,很幸运能遇见你!","color":"#EEEE00"}
+{"img":"/static/src/image/6.jpg","info":"Ｃonfident：期待以后能和你一起生活一起工作","color":"#EEEE00"}
+{"img":"/static/src/image/6.jpg","info":"Ｃonfident：From Zero To Hero!I Love u","color":"#EEEE00"}
+{"img":"/static/src/image/6.jpg","info":"Ｃonfident：未来我有信心!相信我!","color":"#EEEE00"}
+{"img":"/static/src/image/4.jpg","info":"张振伦:百年好合!!!","color":"#FF69B4"}
+{"img":"/static/src/image/8.jpg","info":"Ｃonfident：我是陈立,我爱罗银湘!","color":"#EEEE00"}
+{"img":"/static/src/image/2.jpg","info":"摇了摇头：加油!立哥!","color":"#FF69B4"}
+{"img":"/static/src/image/3.jpg","info":"草帽小子：加油!","color":"#FF69B4"}
+{"img":"/static/src/image/3.jpg","info":"草帽小子：等你的脱单饭","color":"#FF69B4"}
+{"img":"/static/src/image/7.jpg","info":"黎俊权：傻嗨,66666,带我装逼带我飞啊!","color":"#FF69B4"}
+{"img":"/static/src/image/5.jpg","info":"罗宝乐：哇擦,大哥,牛逼啊!祝福长长久久","color":"#FF69B4"}
+{"img":"/static/src/image/9.jpg","info":"伍国威：伍国威最牛逼！记得请吃饭!","color":"#FF69B4"}
+{"img":"/static/src/image/12.jpg","info":"大鑫鑫：祝福祝福!","color":"#FF69B4"}
+{"img":"/static/src/image/13.jpg","info":"可以可以!点个赞,祝福!","color":"#FF69B4"}
+{"img":"/static/src/image/14.jpg","info":"Jack：唱得不错喔!加油!","color":"#FF69B4"}
+{"img":"/static/src/image/15.jpg","info":"Lin林：立哥带我飞","color":"#FF69B4"}
+{"img":"/static/src/image/6.jpg","info":"Confident:2017.10.28 这一天正式跟你在一起","color":"#FFFFFF"}
+{"img":"/static/src/image/6.jpg","info":"陈立：谢谢大家的支持！","color":"#FFFFFF"}
+{"img":"/static/src/image/barrager.png","info":"祝福祝福 小可爱飘过~","color":"#FFFFFF"}
+{"img":"/static/src/image/barrager.png","info":"陈立：大家发弹幕啊","color":"#FFFFFF"}
+{"img":"/static/src/image/6.jpg","info":"Ｃonfident：爱那么直接 没有应该不应该","color":"#EEEE00"}
+{"img":"/static/src/image/6.jpg","info":"Ｃonfident：爱那么简单 不要怕 要期待","color":"#EEEE00"}
+{"img":"/static/src/image/6.jpg","info":"Ｃonfident：我喜欢跟你一起生活更精彩","color":"#EEEE00"}
+{"img":"/static/src/image/6.jpg","info":"Ｃonfident：你就是我要的未来","color":"#EEEE00"}
+{"img":"/static/src/image/6.jpg","info":"Ｃonfident：每一次约会我都期待","color":"#EEEE00"}
+{"img":"/static/src/image/6.jpg","info":"Ｃonfident：我喜欢感到 你对我依赖","color":"#EEEE00"}
+{"img":"/static/src/image/6.jpg","info":"Ｃonfident：爱憧憬 我们的将来","color":"#EEEE00"}
+{"img":"/static/src/image/6.jpg","info":"Ｃonfident：我喜欢感到 你对我依赖","color":"#EEEE00"}
+{"img":"/static/src/image/6.jpg","info":"Ｃonfident：爱憧憬 我们的将来","color":"#EEEE00"}
+{"img":"/static/src/image/6.jpg","info":"Ｃonfident：你还不相信 我的诚恳","color":"#EEEE00"}
+{"img":"/static/src/image/6.jpg","info":"Ｃonfident：我愿意给你 我的世界","color":"#EEEE00"}
+{"img":"/static/src/image/6.jpg","info":"Ｃonfident：爱慢慢向我靠过来","color":"#EEEE00"}
+{"img":"/static/src/image/6.jpg","info":"左右滚动图片","color":"#FFFFFF"}
+{"img":"/static/src/image/6.jpg","info":"陈立:努力，创造更好的","color":"#FFFFFF"}
+{"img":"/static/src/image/barrager.png","info":"祝福祝福","color":"#FFFFFF"}
+{"img":"/static/src/image/barrager.png","info":"Z:点个赞给个祝福~","color":"#FFFFFF"}
+{"img":"/static/src/image/6.jpg","info":"虽然我经常惹你生气,但我知道你还是爱我的!","color":"#FFFFFF"}
+{"img":"/static/src/image/6.jpg","info":"Confident:2017.11.11 带你和我的家人在坦洲公园一起烧烤!嘻嘻","color":"#FFFFFF"}
+{"img":"/static/src/image/6.jpg","info":"Confident:2017.12.24 跟你在珠海海洋王国度过的平安夜,还记得坐过山车吓傻的你的样子  哈哈哈","color":"#FFFFFF"}
+{"img":"/static/src/image/6.jpg","info":"Confident:希望你能感受到我的真心,I Love U!","color":"#FFFFFF"}
+{"img":"/static/src/image/6.jpg","info":"陈立:谢谢大家的支持喔!","color":"#FFFFFF"}
+{"img":"/static/src/image/6.jpg","info":"陈立：罗银湘，我爱你！","color":"#FFFFFF"}
+{"img":"/static/src/image/barrager.png","info":"罗银湘，发弹幕啊","color":"#FFFFFF"}
+{"img":"/static/src/image/barrager.png","info":"罗银湘，发弹幕啊","color":"#FFFFFF"}
+{"img":"/static/src/image/barrager.png","info":"罗银湘，发弹幕啊","color":"#FFFFFF"}
+{"img":"/static/src/image/barrager.png","info":"罗银湘，发弹幕啊","color":"#FFFFFF"}
+{"img":"/static/src/image/barrager.png","info":"罗银湘，发弹幕啊","color":"#FFFFFF"}
+{"img":"/static/src/image/6.jpg","info":"陈立:傻逼罗银湘!!!","color":"#FFFFFF"}
+{"img":"/static/src/image/6.jpg","info":"陈立:罗银湘,还行不!这个网站","color":"#FFFFFF"}
+{"img":"/static/src/image/6.jpg","info":"陈立:我知道你在这里","color":"#FFFFFF"}
+{"img":"/static/src/image/6.jpg","info":"陈立:我知道你在这里","color":"#FFFFFF"}
+{"img":"/static/src/image/6.jpg","info":"陈立:我知道你在这里","color":"#FFFFFF"}
+{"img":"/static/src/image/barrager.png","info":"陈立","color":"#FFFFFF"}

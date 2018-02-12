@@ -1,0 +1,94 @@
+{% extends "header.html" %}
+{% block body %}
+{% load staticfiles %}
+ <style>
+ .span{
+     font-size: 16px;
+     font-weight: normal;
+     font-family: 微软雅黑;
+     color:  #f7c223;
+
+ }
+ .span2{
+     font-size: 16px;
+     font-weight: normal;
+     font-family: 微软雅黑;
+     width:100%;
+     margin-left: 5px;
+      color: grey;
+
+
+ }
+ .divier{
+     margin-top: 8px;
+     background-color: #f7c223;
+     height: 1px;
+     margin-bottom: 8px;
+ }
+ </style>
+{% if name %}
+ <fieldset  style="color: white;margin-left: 4%;margin-top:17%;font-weight: bold;font-size: 18px ;margin-bottom: 10px">基本信息</fieldset>
+ <div   style="background: white ;">
+        <div class="container"  style="">
+             <hr class="divier" style="background-color:white;margin-top: 0px;">
+            <span class="span" >姓名 :</span>
+            <span class="span2">{{ Users.name }}</span>
+            <hr class="divier">
+            <span class="span" >初审额度 :</span>
+            <span class="span2">{{ Users.result }}元</span>
+            <hr class="divier">
+            <span class="span" >社保 :</span>
+            <span class="span2">{{ Users.shebaotime }}个月</span>
+            <hr class="divier">
+            <span class="span" >公积金 :</span>
+            <span class="span2">{{ Users.gongjijintime }}个月</span>
+            <hr class="divier">
+            <span class="span" >芝麻分 :</span>
+            <span class="span2" >{{ Users.zhimafen }}</span>
+{#            <hr class="divier">#}
+{#            <span class="span" >腾讯信用分 :</span>#}
+{#            <span class="span2" >750</span>#}
+              <hr class="divier" style="background-color:white;margin-bottom: 0px;">
+        </div>
+ </div>
+
+
+<fieldset  style="color: white;margin-left: 4%;margin-top:3%;font-weight: bold;font-size: 18px ;margin-bottom: 10px">工作信息</fieldset>
+<div   style="background:white ;">
+        <div class="container"  style="">
+            <hr class="divier" style="background-color:white;margin-top: 0px;">
+            <span class="span" >单位名称 :</span>
+            <span class="span2">{{ Users.job_address }}</span>
+            <hr class="divier">
+            <span class="span" >工作年限 :</span>
+            <span class="span2">{{ Users.job_age }}个月</span>
+               <hr class="divier" style="background-color:white;margin-bottom: 0px;">
+        </div>
+ </div>
+
+
+<fieldset  style="color: white;margin-left: 4%;margin-top:3%;font-weight: bold;font-size: 18px ; margin-bottom: 10px">居住信息</fieldset>
+<div   style="background: white;margin-top: 5px">
+        <div class="container"  style="">
+           <hr class="divier" style="background-color:white;margin-top: 0px;">
+            <span class="span" >居住类型 :</span>
+            <span class="span2">{{ Users.house }}</span>
+            <hr class="divier">
+            <span class="span" >居住地址 :</span>
+            <span class="span2">{{ Users.home_address }}</span>
+             <hr class="divier" style="background-color:white;margin-bottom: 0px;">
+        </div>
+ </div>
+    <a   href="/message"  type="button" class="btn btn-primary" style="width: 50%;margin-left: 25%;margin-top: 8px;font-family: 微软雅黑;font-size: 15px" >完善个人信息</a>
+<script>
+document.title='个人信息中心'
+  document.body.style.backgroundColor="#ff9333";
+</script>
+    {% else %}
+    <script>
+    alert('请先登录!')
+    location.href='/login'
+    </script>
+ {% endif %}
+{% endblock %}
+</html>

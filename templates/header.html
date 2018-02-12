@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <title>好易贷轻松贷</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=no"/>
+  </head>
+   <body >  <!--  修改内容 -->
+   <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap-validator/0.5.3/js/bootstrapValidator.js"></script>
+   <style>
+          .navbar.navbar-default{
+             background: #ff9333;
+              font-size: 18px;
+
+         }
+         .navbar.navbar-collapse collapse{
+             color:white;
+
+         }
+   </style>
+    <style>
+        .carousel slide
+        {
+            height: 500px;
+            background: #000;
+        }
+        .carousel-inner.item
+        {
+            height: 500px;
+        }
+       .lo-little{
+                font-size: 23px;
+                color: #ff9333;
+                margin-bottom: 8px;
+        }
+      .lo-little .num{
+          display: inline-block;
+    vertical-align: text-top;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    color: #fff;
+    background: #ff9333;
+    text-align: center;
+    line-height: 32px;
+    margin-right: 10px;
+    margin-bottom: 8px;
+        }
+
+        .navbar-default a:hover {color:white !important;background:transparent;outline:0}
+        .navbar-default a {transition: color 0.2s ease-in-out;}/*-webkit-transition ;-moz-transition*/
+       .navbar-nav li:hover{
+            display: block;
+            background: #f7c223;
+            padding: 4px;
+           font-size: 18px;
+
+}
+
+    </style>
+    <!-- Fixed navbar -->
+  <nav class="navbar navbar-default navbar-fixed-top navbar-btn-lg">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#" style="color: white">好易贷轻松贷</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+              <li ><a href="/index" style="color: white;">主页</a></li>
+              <li><a href="#contact" style="color: white">网点</a></li>
+              <li><a href="#about" style="color: white">产品简介</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/login" style="color: white">登录</a></li>
+            <li ><a href="/register" style="color: white;">注册</a></li>
+              <li ><a href="/user" style="color: white;">个人中心</a></li>
+
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+   {% block body %}
+       <!--/自定义Body-->
+   {% endblock %}
+
+</body>
+</html>

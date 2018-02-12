@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load staticfiles %}
+<head>
+    <meta charset="UTF-8">
+    <title>贷款申请结果</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+       <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+</head>
+<body >
+<style>
+
+.div-span {
+ position:absolute;
+    left: 32%;
+    top:55%;
+}
+.spn-text1
+{
+    font-size: 40px;
+    font-family: 微软雅黑;
+    font-weight: bold;
+    color: red
+}
+
+    /* 小屏幕（平板，大于等于768px） */
+@media (max-height: 730px) {
+    .div-span {
+        left: 25%;
+        top: 54%;
+    }
+    .spn-text1
+{
+    font-size: 55px;
+    font-family: 微软雅黑;
+    font-weight: bold;
+    color: red
+}
+}
+@media (min-width: 413px) {
+    .div-span {
+        left: 27%;
+        top: 51%;
+    }
+    .spn-text1
+{
+    font-size: 80px;
+    font-family: 微软雅黑;
+    font-weight: bold;
+    color: #1B9A59;
+}
+}
+</style>
+
+
+<div >
+        <img src="{% static 'src/image/result.jpg' %}" style="width: 100%">
+
+</div>
+    {% if rs > 100000 %}
+        <div class="div-span" style="left: 24%;">
+            <span class="spn-text1" > {{ rs }} </span>
+        {% else %}
+        <div class="div-span" style="left: 27%;">
+             <span class="spn-text1 "  > {{ rs }}</span>
+    {% endif %}
+</div>
+ <script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+</body>
+</html>
